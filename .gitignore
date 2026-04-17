@@ -212,3 +212,7 @@ models/*.pkl
 data/*.csv
 mlruns/
 .DS_Store
+
+# MLflow
+mlflow.db
+mlruns/
