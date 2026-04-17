@@ -25,8 +25,8 @@ def get_top_factors(
     X_transformed = preprocessor.transform(X_single)
     feature_names = _clean_feature_names(preprocessor.get_feature_names_out())
 
-    explainer = shap.TreeExplainer(classifier)
-    shap_values = explainer.shap_values(X_transformed)
+    explainer = shap.LinearExplainer(classifier, X_transformed)
+    shap_values = explainer(X_transformed).values
     values = _positive_class_values(shap_values)
 
     abs_values = np.abs(values)
