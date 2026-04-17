@@ -114,8 +114,6 @@ YZTA 5.0 P2P 2 Veri Bilimi Challenge şartnamesinde belirtilen tüm temel ve ek 
 
 ## 👥 Takım
 
-YZTA 5.0 P2P felsefesine uygun olarak — *"herkes kendi başına yapmalı değil, hep birlikte daha iyi nasıl yaparız"* — proje 3 kişilik bir ekip tarafından paralel branch stratejisi ile geliştirilmiştir.
-
 <table align="center">
 <tr>
 <td align="center">
@@ -153,14 +151,6 @@ YZTA 5.0 P2P felsefesine uygun olarak — *"herkes kendi başına yapmalı deği
 </td>
 </tr>
 </table>
-
-**Rol dağılımı (Kişi A / B / C):**
-
-| Rol | Kişi | Sorumluluk |
-|-----|------|------------|
-| **Kişi B** — Model & Pipeline | Muratcan Ateş | Veri pipeline'ı, 3 model eğitimi, MLflow deney takibi, FastAPI servisi, SHAP entegrasyonu |
-| **Kişi A** — EDA | Yusuf Eker | Keşifsel veri analizi, `notebooks/eda.ipynb`, temel istatistikler ve dağılım görselleri |
-| **Kişi C** — Test & Dokümantasyon | Berkan Öksüz | README cilalama, API test senaryoları, entegrasyon doğrulama |
 
 <br/>
 
@@ -615,7 +605,7 @@ telco-churn/
 │   └── feature_names.pkl                  # One-hot sonrası öznitelik isimleri
 │
 ├── notebooks/                             # 📓 EDA ve analiz
-│   ├── eda.ipynb                          # Keşifsel veri analizi (Kişi A)
+│   ├── eda.ipynb                          # Keşifsel veri analizi
 │   └── generate_readme_figures.py         # README görsellerini üreten script
 │
 ├── reports/figures/                       # 🖼️ Rapor görselleri
@@ -635,8 +625,7 @@ telco-churn/
 ### Branch Stratejisi
 
 - `main` — production, sadece tamamlanmış ve test edilmiş kod
-- `feature/eda` — Kişi A (Yusuf) için EDA notebook geliştirme
-- `feature/docs-tests` — Kişi C (Berkan) için dokümantasyon ve test geliştirme
+- Feature branch'leri — yeni özellik/düzeltme çalışmaları için
 
 PR workflow:
 
@@ -689,9 +678,7 @@ Render free tier: 512 MB RAM, 0.1 vCPU — SHAP + sklearn için sınırda. Memor
 
 ## 🤝 Katkı
 
-Bu proje YZTA 5.0 P2P 2 kapsamında geliştirilmiştir. P2P felsefesine uygun olarak, bulduğunuz hataları veya iyileştirme önerilerini issue açarak paylaşabilirsiniz. Pull request'ler memnuniyetle kabul edilir.
-
-Önemli değişiklikler için önce bir issue açın ki tartışabilelim.
+Bulduğunuz hataları veya iyileştirme önerilerini issue açarak paylaşabilirsiniz. Pull request'ler memnuniyetle kabul edilir.
 
 <br/>
 
@@ -718,10 +705,6 @@ MIT Lisansı altında yayımlanmıştır. Detaylar için [`LICENSE`](LICENSE) do
 - **MLflow** · [mlflow.org](https://mlflow.org/)
 - **Pydantic v2 Migration Guide** · [docs.pydantic.dev](https://docs.pydantic.dev/latest/migration/)
 
-### Mülakatlar ve Eğitim
-- **YZTA 5.0 · Yapay Zeka ve Teknoloji Akademisi** · Peer-to-Peer Program
-- **Atıl Samancıoğlu** · Python temelleri eğitmen desteği
-
 ### İlham
 - **othneildrew/Best-README-Template** · README yapısı için
 - **alexandresanlim/Badges4-README.md-Profile** · badge stilleri için
@@ -735,7 +718,5 @@ MIT Lisansı altında yayımlanmıştır. Detaylar için [`LICENSE`](LICENSE) do
 **YZTA 5.0 · P2P 2 · Veri Bilimi Challenge · Nisan 2026**
 
 Geliştirenler: [@muratcan-ates](https://github.com/muratcan-ates) · Yusuf Eker · Berkan Öksüz
-
-⭐ Projeyi beğendiyseniz yıldız vermeyi unutmayın.
 
 </div>
