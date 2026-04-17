@@ -7,6 +7,5 @@ jupyter
 fastapi
 uvicorn
 joblib
-mlflow
 shap
 evidently
