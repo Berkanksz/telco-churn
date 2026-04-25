@@ -128,8 +128,8 @@ YZTA 5.0 P2P 2 Veri Bilimi Challenge şartnamesinde belirtilen tüm temel ve ek 
   <sub>Pipeline · API · SHAP</sub>
 </td>
 <td align="center">
-  <a href="https://github.com/">
-    <img src="https://github.com/identicons/yusuf-eker.png" width="100" alt="Yusuf Eker"/>
+  <a href="https://github.com/yusufekerr">
+    <img src="https://github.com/yusufekerr.png" width="100" alt="Yusuf Eker"/>
     <br/>
     <sub><b>Yusuf Eker</b></sub>
   </a>
@@ -139,8 +139,8 @@ YZTA 5.0 P2P 2 Veri Bilimi Challenge şartnamesinde belirtilen tüm temel ve ek 
   <sub>EDA · Görselleştirme</sub>
 </td>
 <td align="center">
-  <a href="https://github.com/">
-    <img src="https://github.com/identicons/berkan-oksuz.png" width="100" alt="Berkan Öksüz"/>
+  <a href="https://github.com/Berkanksz">
+    <img src="https://github.com/Berkanksz.png" width="100" alt="Berkan Öksüz"/>
     <br/>
     <sub><b>Berkan Öksüz</b></sub>
   </a>
