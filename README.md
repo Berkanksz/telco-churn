@@ -46,6 +46,7 @@
 - [📋 Challenge Gereksinimleri](#-challenge-gereksinimleri)
 - [👥 Takım](#-takım)
 - [🛠️ Kullanılan Teknolojiler](#️-kullanılan-teknolojiler)
+- [🧪 API Validation](#-api-validation)
 - [📊 Sonuçlar](#-sonuçlar)
 - [🧮 Matematiksel Temel](#-matematiksel-temel)
 - [🏗️ Sistem Mimarisi](#️-sistem-mimarisi)
@@ -171,6 +172,26 @@ YZTA 5.0 P2P 2 Veri Bilimi Challenge şartnamesinde belirtilen tüm temel ve ek 
 | **Serileştirme** | joblib 1.4 | sklearn pipeline ve numpy array'leri için pickle üzerinde optimize edilmiş |
 
 Tüm bağımlılıklar `requirements.txt` içinde sürümlenmiştir. Üretim bağımlılıkları **~150 MB** idle RSS hedefiyle tutulmuştur; MLflow deliberately `requirements-dev.txt`'e taşınmıştır.
+
+<br/>
+
+---
+
+## 🧪 API Validation
+
+API tüm endpoint'lerde manuel olarak doğrulanmış, 15 senaryoluk bir test seti çalıştırılmıştır. Tüm senaryolar beklenen davranışı sergilemiş (200 ya da 422), regresyon gözlenmemiştir.
+
+| Kategori | Senaryo | Sonuç |
+|----------|:-:|:-:|
+| Mutlu yol (happy path) | 5 | ✅ Tümü `200 OK` |
+| Edge case (boundary) | 5 | ✅ Tümü beklendiği gibi (`200`) |
+| Hata senaryosu (invalid input) | 5 | ✅ Tümü `422 Unprocessable Entity` |
+
+- **Performans:** `/predict` cold-start ~22 ms, sonraki çağrılar **5–14 ms** aralığında, ortalama **~8.2 ms**.
+- **Observability:** `x-request-id` response header tüm yanıtlarda mevcut (**17/17**) — log korelasyonu için hazır.
+- **Bilinen davranış:** sklearn `OneHotEncoder(handle_unknown='ignore')` ayarı bilinmeyen kategorik değerleri sessizce sıfır vektörüne çevirir (örn. `Contract="Lifetime"` → `200`). Production için Pydantic `Literal[...]` ile schema seviyesinde reddetmek daha güvenli — bu bir *known limitation*, ileride iyileştirilecektir.
+
+Senaryo bazlı istek/yanıt dökümleri ve latency ölçümleri için: [`reports/api_test_report.md`](reports/api_test_report.md).
 
 <br/>
 
